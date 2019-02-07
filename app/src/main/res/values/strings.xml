@@ -1,0 +1,23 @@
+<resources>
+    <!-- Main Application String -->
+    <string name="app_name">TentyAndroid</string>
+    <string name="company_name">Tenty</string>
+    <string name="database_name">tenty-database</string>
+    <string name="channel_id">Tenty1</string>
+    <string name="channel_name">Tenty Channel</string>
+    <string name="channel_description">Notifications that originate from the Tenty application</string>
+    <string name="content_description">Content</string>
+
+    <!-- Button Strings -->
+    <string name="btn_request_permissions">Accept</string>
+
+    <!-- Message Strings -->
+    <string name="msg_exit">Exit</string>
+    <string name="msg_failed_audio">Audio failed to load!</string>
+    <string name="msg_no_spam_found">No spam history available!</string>
+    <string name="msg_permission_denied">Not all permissions were granted!</string>
+    <string name="msg_spam_call_detected">Spam Call Detected!</string>
+    <string name="msg_spam_text_detected">Spam Message Detected!</string>
+    <string name="msg_spam_description">The following number %s has been previously reported as spam!</string>
+    <string name="msg_request_permissions">This application requires the following permissions:\n\nReceiving SMS\nReading Phone State\nReading Call Log\n\nThese are needed in order to detect if your call or message is a spam.</string>
+</resources>

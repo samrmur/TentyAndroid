@@ -1,0 +1,83 @@
+ext {
+    versions = [
+            // Project Versions
+            java                : JavaVersion.VERSION_1_8,
+            gradle              : '3.2.1',
+            minSdk              : 23,
+            compileSdk          : 28,
+            targetSdk           : 28,
+            buildTools          : '28.0.3',
+            kotlin              : '1.2.71',
+            coroutine           : '0.30.2',
+
+            // Library Versions
+            androidExt          : '1.0.0',
+            materialExt         : '1.0.0-rc01',
+            constraintExt       : '1.1.2',
+            dagger              : '2.16',
+            timber              : '4.7.1',
+            okhttp              : '3.11.0',
+            retrofit            : '2.4.0',
+            rxKotlin            : '2.3.0',
+            rxAndroid           : '2.1.0',
+            room                : '2.0.0-rc01',
+            lifecycleExt        : '2.0.0-rc01',
+            moshi               : '1.7.0',
+            kotshi              : '1.0.5',
+            mockito             : '2.10.0',
+            junit               : '4.12',
+            testRunner          : '1.0.2',
+            testEspresso        : '3.0.2'
+    ]
+
+    libraries = [
+            // Project Dependencies
+            gradle              : "com.android.tools.build:gradle:${versions.gradle}",
+            kotlinGradle        : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+            kotlinStd           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
+            coroutines          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutine}",
+            coroutinesAndroid   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutine}",
+
+            // Android Extensions Dependencies
+            androidCore         : "androidx.core:core-ktx:${versions.androidExt}",
+            appcompat           : "androidx.appcompat:appcompat:${versions.androidExt}",
+            design              : "com.google.android.material:material:${versions.materialExt}",
+            lifecycle           : "androidx.lifecycle:lifecycle-extensions:${versions.lifecycleExt}",
+            recyclerView        : "androidx.recyclerview:recyclerview:${versions.androidExt}",
+            constraint          : "androidx.constraintlayout:constraintlayout:${versions.constraintExt}",
+            fragments           : "androidx.fragment:fragment-ktx:${versions.androidExt}",
+
+            // Dagger dependencies
+            dagger              : "com.google.dagger:dagger:${versions.dagger}",
+            daggerAndroid       : "com.google.dagger:dagger-android:${versions.dagger}",
+            daggerSupport       : "com.google.dagger:dagger-android-support:${versions.dagger}",
+            daggerProcessor     : "com.google.dagger:dagger-compiler:${versions.dagger}",
+            daggerAndroidApt    : "com.google.dagger:dagger-android-processor:${versions.dagger}",
+
+            // Timber dependencies
+            timber              : "com.jakewharton.timber:timber:${versions.timber}",
+
+            // ReactiveX dependencies
+            rxKotlin            : "io.reactivex.rxjava2:rxkotlin:${versions.rxKotlin}",
+            rxAndroid           : "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}",
+            rxAdapter           : "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
+
+            // Room dependencies
+            roomRuntime         : "android.arch.persistence.room:runtime:${versions.room}",
+            roomCompiler        : "android.arch.persistence.room:compiler:${versions.room}",
+
+            // Network dependencies
+            okhttpLogger        : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+            retrofit            : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+            moshi               : "com.squareup.moshi:moshi:${versions.moshi}",
+            moshiConverter      : "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
+            kotshiApi           : "se.ansman.kotshi:api:${versions.kotshi}",
+            kotshiCompiler      : "se.ansman.kotshi:compiler:${versions.kotshi}",
+
+            // Testing dependencies
+            junit               : "junit:junit:${versions.junit}",
+            mockito             : "org.mockito:mockito-core:${versions.mockito}",
+            testRunner          : "com.android.support.test:runner:${versions.testRunner}",
+            testEspresso        : "com.android.support.test.espresso:espresso-core:${versions.testEspresso}"
+    ]
+}

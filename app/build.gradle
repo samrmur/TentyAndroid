@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        applicationId "com.tenty.tentyandroid"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField 'String', "BaseUrl", Tenty_BaseUrl
+            resValue 'string', "baseUrl", Tenty_BaseUrl
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', "BaseUrl", Tenty_BaseUrl
+            resValue 'string', "baseUrl", Tenty_BaseUrl
+        }
+    }
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libraries.kotlinStd
+    implementation libraries.coroutines
+    implementation libraries.coroutinesAndroid
+
+    implementation libraries.androidCore
+    implementation libraries.appcompat
+    implementation libraries.design
+    implementation libraries.lifecycle
+    implementation libraries.recyclerView
+    implementation libraries.constraint
+    implementation libraries.fragments
+
+    implementation libraries.dagger
+    implementation libraries.daggerAndroid
+    implementation libraries.daggerSupport
+    kapt libraries.daggerProcessor
+    kapt libraries.daggerAndroidApt
+
+    implementation libraries.rxKotlin
+    implementation libraries.rxAndroid
+    implementation libraries.rxAdapter
+
+    implementation libraries.timber
+
+    implementation libraries.roomRuntime
+    kapt libraries.roomCompiler
+
+    implementation libraries.okhttpLogger
+    implementation libraries.retrofit
+    implementation libraries.moshi
+    implementation libraries.moshiConverter
+    implementation libraries.kotshiApi
+    kapt libraries.kotshiCompiler
+
+    testImplementation libraries.junit
+    testImplementation libraries.mockito
+    androidTestImplementation libraries.testRunner
+    androidTestImplementation libraries.testEspresso
+}
